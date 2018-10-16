@@ -1,0 +1,2 @@
+#define Vector_VERSION_MAJOR @Vector_VERSION_MAJOR@
+#define Vector_VERSION_MINOR @Vector_VERSION_MINOR@
