@@ -5,9 +5,6 @@
 #include <initializer_list>
 #include <stdexcept>
 
-template<typename T> class Vector;
-template<typename T> Vector<T> operator+(const Vector<T>&, const Vector<T>&);
-
 template<typename T>
 class Vector {
 public:
@@ -21,7 +18,7 @@ public:
 	Vector(Vector&&); //move constructor
 	Vector& operator=(Vector&&); //move assignment
 
-	friend Vector<T> operator+ <T> (const Vector<T>&, const Vector<T>&);
+	Vector operator+ (const Vector&);
 
 	T& operator[](int);
 	const T& operator[](int) const;

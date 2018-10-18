@@ -73,17 +73,17 @@ Vector<T>& Vector<T>::operator=(Vector&& a)
 }
 
 template<typename T>
-Vector<T> operator+ (const Vector<T>& a, const Vector<T>& b)
+Vector<T> Vector<T>::operator+ (const Vector<T>& a)
 {
 	std::cout << "Vector::operator+\n";
 
-	if (a.size() != b.size())
+	if (this->size() != a.size())
 		throw std::length_error{"Vector::operator+, can't add Vectors of different sizes"};
 
-	Vector<T> res(a.size());
+	Vector<T> res(this->size());
 
-	for (int i = 0; i != a.size(); ++i)
-		res[i] = a[i] + b[i];
+	for (int i = 0; i != this->size(); ++i)
+		res[i] = this->elem[i] + a[i];
 
 	return res;
 }
@@ -107,4 +107,3 @@ int Vector<T>::size() const
 }
 
 template class Vector<double>;
-template Vector<double> operator+<double>(Vector<double> const& a, Vector<double> const& b);
